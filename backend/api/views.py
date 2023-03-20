@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
-from django.http import JsonResponse
 from api.serializer import MyTokenObtainPairSerializer, RegisterSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import generics, status
@@ -20,7 +19,7 @@ class RegisterView(generics.CreateAPIView):
 @permission_classes([IsAuthenticated])
 def testEndPoint(request):
     if request.method == 'GET':
-        data = f"Congratulation {request.user}, your API just responded to GET request"
+        data = f'Congratulation {request.user}, your API just responded to GET request'
         return Response({'response': data}, status=status.HTTP_200_OK)
     elif request.method == 'POST':
         text = request.POST.get('text')

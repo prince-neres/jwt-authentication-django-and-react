@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import UserInfo from "../components/UserInfo";
-import AuthContext from "../context/AuthContext";
+import { useContext } from 'react';
+import UserInfo from '../components/UserInfo';
+import AuthContext from '../context/AuthContext';
 
 const Home = () => {
   const { user } = useContext(AuthContext);
@@ -9,7 +9,7 @@ const Home = () => {
       {user && <UserInfo user={user} />}
       <h1>You are on home page!</h1>
     </section>
-  );
+  )
 };
 
 export default Home;
